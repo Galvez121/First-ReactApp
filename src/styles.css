@@ -1,0 +1,39 @@
+.cardContainer {
+  display: flex;
+  flex-flow: column;
+  width: 500px;
+  border: 5px solid black;
+  border-radius: 16px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.picture img {
+  margin-top: 10px;
+  width: 50%;
+}
+
+.myBiography {
+  margin: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.myBiography p {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.skill {
+  display: flex;
+  margin-right: 15px;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
