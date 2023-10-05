@@ -1,6 +1,29 @@
 import "./styles.css";
 import React from "react";
 
+const skills = [
+  {
+    skillName: "HTMl - CSS",
+    level: "intermediate",
+    color: "blue",
+  },
+  {
+    skillName: "JavaScript",
+    level: "beginner",
+    color: "Orange",
+  },
+  {
+    skillName: "React",
+    level: "beginner",
+    color: "lightblue",
+  },
+  {
+    skillName: "Github",
+    level: "intermediate",
+    color: "red",
+  },
+];
+
 export default function App() {
   return (
     <div className="cardContainer">
@@ -36,18 +59,27 @@ function Biography() {
 
 function SkillList() {
   return (
-    <div className="skill-list">
-      <Skill color="red" skillName="HTMl - CSS 👌" />
+    <ul className="skill-list">
+      {skills.map((skill) => (
+        <Skill skillObj={skill} key={skill.skillName} />
+      ))}
+
+      {/* <Skill color="red" skillName="HTMl - CSS 👌" />
       <Skill color="orange" skillName="JS 👍" />
-      <Skill color="lightblue" skillName="React 💪" />
-    </div>
+      <Skill color="lightblue" skillName="React 💪" /> */}
+    </ul>
   );
 }
 
-function Skill(props) {
+function Skill({ skillObj }) {
   return (
-    <div className="skill" style={{ background: props.color }}>
-      <span>{props.skillName}</span>
-    </div>
+    <li className="skill" style={{ background: skillObj.color }}>
+      <span>
+        {skillObj.skillName}
+        {skillObj.level === "beginner" && "👶"}{" "}
+        {skillObj.level === "intermediate" && "👍"}
+        {skillObj.level === "advance" && "💪"}{" "}
+      </span>
+    </li>
   );
 }
